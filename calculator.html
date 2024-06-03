@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calculator</title>
+</head>
+<body>
+	<style type="text/css">
+		body{
+			background: #000;
+			margin: 100px;
+		}
+		input{
+			box-shadow: 3px -3px 6px #f3f3f3, -3px 3px 6px #fff;
+			width: 310px;
+			height: 50px;
+			background: #c0c0c0;
+			font-size: 20px;
+		}
+		button{
+			box-shadow: 3px -3px 6px #f3f3f3, -3px 3px 6px #fff;
+			height: 50px;
+			width: 50px;
+			flex-wrap: wrap;
+			background: #c0c;
+		}
+	</style>
+	<input type="text" id="inp" readonly><br>
+
+	<button onclick="run(1)">1</button>
+	<button onclick="run(2)">2</button>
+	<button onclick="run(3)">3</button>
+	<button onclick="run(4)">4</button>
+	<button onclick="run(5)">5</button>
+	<button onclick="run(6)">6</button><br>
+	<button onclick="run(7)">7</button>
+	<button onclick="run(8)">8</button>
+	<button onclick="run(9)">9</button>
+	<button onclick="run(0)">0</button>
+	<button onclick="run('%')">%</button>
+	<button onclick="run('-')">-</button><br>
+	<button onclick="run('(')">(</button>
+	<button onclick="run(')')">)</button>
+	<button onclick="run('.')">.</button>
+	<button onclick="run('+')">+</button>
+	<button onclick="clr()">c</button>
+	<button onclick="eql()">=</button>
+
+	<script type="text/javascript">
+		const inp= document.getElementById("inp");
+		const run= (e) => {
+			inp.value+=e
+		}
+		const eql= () => {
+			let abc= inp.value
+			let cal= eval(abc);
+			inp.value= cal
+		};
+		const clr= () => {
+			inp.value= "";
+
+		}
+
+	</script>
+
+</body>
+</html>
